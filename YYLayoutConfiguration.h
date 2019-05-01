@@ -19,6 +19,11 @@
 /** 位置大小 */
 @property (nonatomic, assign) CGFloat yy_x;
 @property (nonatomic, assign) CGFloat yy_y;
+@property (nonatomic, assign) CGFloat yy_right;
+@property (nonatomic, assign) CGFloat yy_bottom;
+@property (nonatomic, assign) CGPoint yy_center;
+@property (nonatomic, assign) CGFloat yy_centerX;
+@property (nonatomic, assign) CGFloat yy_centerY;
 @property (nonatomic, assign) CGFloat yy_maxWidth;
 @property (nonatomic, assign) CGPoint yy_contentOrigin;
 @property (nonatomic, assign) CGSize yy_contentSize;

@@ -13,7 +13,10 @@
 @property (nonatomic, strong) NSObject *yy_contentModel;
 @property (nonatomic, strong) YYTextLayout *titleLabelLayout;
 @property (nonatomic, strong) YYTextLayout *subtitleLabelLayout;
+/** model数组转layout数组 */
 + (instancetype)wxmCellLayoutcontenModel:(NSObject *)yy_contentModel;
+/** 转换过程调用initializeTextLayout 子类需重写 */
+- (void)initializeTextLayout;
 @end
 
 
@@ -28,12 +31,12 @@
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 
 /** 将存放model(obj)的数组转换成存放Layout数组 */
-static inline NSArray *YY_DataConversion(NSArray *dataSource,Class classObj) {
+static inline NSMutableArray *YY_DataConversion(NSArray *dataSource,Class classObj) {
     NSMutableArray *arratM = @[].mutableCopy;
     SEL sel = NSSelectorFromString(@"wxmCellLayoutcontenModel:");
     if (![classObj respondsToSelector:sel]) return nil;
     [dataSource enumerateObjectsUsingBlock:^(NSObject* obj, NSUInteger idx, BOOL *stop) {
-        WXMYYBaseCellLayout* cellLayout =  [classObj performSelector:sel withObject:obj];
+        Class cellLayout =  [classObj performSelector:sel withObject:obj];
         if (cellLayout != nil) [arratM addObject:cellLayout];
     }];
     return arratM;

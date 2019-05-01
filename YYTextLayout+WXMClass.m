@@ -15,6 +15,7 @@
 
 /** 初始化YYTextLayout */
 + (YYTextLayout *)textLayoutWithConfiguration:(YYLayoutConfiguration *)configuration {
+    
     NSString *content = configuration.yy_content;
     NSAssert(content != nil, @"异步绘制需要传入content");
     if (!content) return nil;
@@ -30,13 +31,16 @@
         contentSize = configuration.yy_contentSize;
     } else { /** 自定义判断 */
         CGFloat maxWidth = configuration.yy_maxWidth;
-        contentSize = [self getSizeContent:content maxW:maxWidth font:configuration.yy_textFont];
+        contentSize = [self getSizeContent:content
+                                      maxW:maxWidth
+                                      font:configuration.yy_textFont];
     }
     
     YYTextContainer *countContainer = [YYTextContainer containerWithSize:contentSize];
     YYTextLayout *yyLayou = [YYTextLayout layoutWithContainer:countContainer text:text];
     configuration.yy_width = yyLayou.container.size.width;
     configuration.yy_height = yyLayou.container.size.height;
+    yyLayou.configuration = configuration;
     return yyLayou;
 }
 
