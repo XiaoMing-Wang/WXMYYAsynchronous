@@ -12,10 +12,10 @@
 @implementation YYLabel (WXMClass)
 
 - (void)asynchWithIgnoreCommonProperties:(BOOL)ignoreCommonProperties {
-        self.displaysAsynchronously = YES;                    //异步绘制
-        self.fadeOnHighlight = NO;                            //淡出动画 减慢速度
-        self.fadeOnAsynchronouslyDisplay = NO;                //褪色动画。减慢速度
-        self.ignoreCommonProperties = ignoreCommonProperties; //忽略公共属性
+    self.displaysAsynchronously = YES;                    /** 异步绘制 */
+    self.fadeOnHighlight = NO;                            /** 淡出动画 减慢速度 */
+    self.fadeOnAsynchronouslyDisplay = NO;                /** 褪色动画。减慢速度 */
+    self.ignoreCommonProperties = ignoreCommonProperties; /** 忽略公共属性 */
 }
 
 - (void)yy_setTextLayout:(YYTextLayout *)textLayout {
