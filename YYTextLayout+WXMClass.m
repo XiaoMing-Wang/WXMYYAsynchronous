@@ -62,6 +62,7 @@
     SEL sel = @selector(configuration);
     objc_setAssociatedObject(self,sel, configuration, OBJC_ASSOCIATION_RETAIN_NONATOMIC);;
 }
+
 - (YYLayoutConfiguration *)configuration {
     return objc_getAssociatedObject(self, _cmd);
 }

@@ -13,8 +13,10 @@
 @property (nonatomic, strong) NSObject *yy_contentModel;
 @property (nonatomic, strong) YYTextLayout *titleLabelLayout;
 @property (nonatomic, strong) YYTextLayout *subtitleLabelLayout;
+
 /** model数组转layout数组 */
 + (instancetype)wxmCellLayoutcontenModel:(NSObject *)yy_contentModel;
+
 /** 转换过程调用initializeTextLayout 子类需重写 */
 - (void)initializeTextLayout;
 @end

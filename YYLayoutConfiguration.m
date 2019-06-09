@@ -21,6 +21,7 @@
     }
     return self;
 }
+
 /** 初始化 */
 + (instancetype)yy_layoutConfiguration:(NSString *)content {
     YYLayoutConfiguration * configuration = [YYLayoutConfiguration new];
