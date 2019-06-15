@@ -13,7 +13,7 @@
 
 /** 初始化子类需要重写 */
 + (instancetype)wxmCellLayoutcontenModel:(NSObject *)yy_contentModel {
-    WXMYYBaseCellLayout *layout = [WXMYYBaseCellLayout new];
+    WXMYYBaseCellLayout *layout = [self new];
     layout.yy_contentModel = yy_contentModel;
     [layout initializeTextLayout];
     return layout;

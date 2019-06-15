@@ -13,5 +13,6 @@
 #import "YYTextLayout+WXMClass.h"
 #import "YYLayoutConfiguration.h"
 #import "WXMYYBaseCellLayout.h"
+#import "YYViewLayout.h"
 
 #endif 

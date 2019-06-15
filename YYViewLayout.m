@@ -1,33 +1,14 @@
 //
-//  YYLayoutConfiguration.m
-//  Demo2
+//  YYViewLayout.m
+//  ModuleDebugging
 //
 //  Created by wq on 2019/5/1.
 //  Copyright © 2019年 wq. All rights reserved.
 //
-#import "YYLayoutConfiguration.h"
 
-@implementation YYLayoutConfiguration
+#import "YYViewLayout.h"
 
-- (instancetype)init {
-    if (self = [super init]) {
-        self.yy_content = @"";
-        self.yy_maxWidth = 0;
-        self.yy_numberOfLines = 1;
-        self.yy_textColor = YYDefaultColor;
-        self.yy_textAlignment = NSTextAlignmentLeft;
-        self.yy_verticalAlignment = YYTextVerticalAlignmentCenter;
-        self.yy_textFont = [UIFont systemFontOfSize:YYDefaultFont];
-    }
-    return self;
-}
-
-/** 初始化 */
-+ (instancetype)yy_layoutConfiguration:(NSString *)content {
-    YYLayoutConfiguration * configuration = [YYLayoutConfiguration new];
-    configuration.yy_content = content;
-    return configuration;
-}
+@implementation YYViewLayout
 
 - (void)setYy_right:(CGFloat)yy_right {
     _yy_right = yy_right;
@@ -55,5 +36,19 @@
     _yy_contentOrigin = yy_contentOrigin;
     _yy_x = yy_contentOrigin.x;
     _yy_y = yy_contentOrigin.y;
+}
+@end
+
+@implementation UIView (YYViewLayout)
+
+- (void)yy_setViewLayout:(YYViewLayout *)viewLayout {
+    CGFloat x = viewLayout.yy_x;
+    CGFloat y = viewLayout.yy_y;
+    CGFloat w = viewLayout.yy_width;
+    CGFloat h = viewLayout.yy_height;
+    self.frame = CGRectMake(x, y, w, h);
+    if (viewLayout.yy_centerX)self.center = CGPointMake(viewLayout.yy_centerX, self.center.y);
+    if (viewLayout.yy_centerY)self.center = CGPointMake(self.center.x,viewLayout.yy_centerY);
+    
 }
 @end
