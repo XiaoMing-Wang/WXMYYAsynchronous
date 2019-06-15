@@ -10,7 +10,7 @@
 
 @interface YYLabel (WXMClass)
 
-/** 忽略公共属性 YES以获得更高的性能但会显示其他界面的信息 默认NO*/
+/** 忽略公共属性 YES以获得更高的性能但会显示其他界面的信息 推荐NO */
 - (void)asynchWithIgnoreCommonProperties:(BOOL)ignoreCommonProperties;
 - (void)yy_setTextLayout:(YYTextLayout *)textLayout;
 

@@ -14,6 +14,7 @@
 @property (nonatomic, strong) YYTextLayout *titleLabelLayout;
 @property (nonatomic, strong) YYTextLayout *subtitleLabelLayout;
 + (instancetype)wxmCellLayoutcontenModel:(NSObject *)yy_contentModel;
+- (void)initializeTextLayout;
 @end
 
 
