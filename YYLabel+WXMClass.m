@@ -16,6 +16,7 @@
     self.fadeOnHighlight = NO;                            /** 淡出动画 减慢速度 */
     self.fadeOnAsynchronouslyDisplay = NO;                /** 褪色动画。减慢速度 */
     self.ignoreCommonProperties = ignoreCommonProperties; /** 忽略公共属性 */
+    self.clearContentsBeforeAsynchronouslyDisplay = NO;   /** 是否需要更新文本 */
 }
 
 - (void)yy_setTextLayout:(YYTextLayout *)textLayout {
